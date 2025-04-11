@@ -33,10 +33,14 @@ class EventResource extends Resource
                 Forms\Components\Select::make('location')
                 ->relationship('wisata', 'name')
                 ->required(),
-                FileUpload::make('posterImage')->image()->nullable(),
-                Toggle::make('isOpen')->default(true),
-                DateTimePicker::make('event_started'),
-                DateTimePicker::make('event_ended'),
+                FileUpload::make('posterImage')->image()->nullable()->required()
+                    ->disk('public')
+                    ->directory('event')
+                    ->preserveFilenames()
+                    ->label('PosterEvent'),
+                Toggle::make('isOpen')->default(true)->required(),
+                DateTimePicker::make('event_started')->required(),
+                DateTimePicker::make('event_ended')->required(),
             ]);
     }
 

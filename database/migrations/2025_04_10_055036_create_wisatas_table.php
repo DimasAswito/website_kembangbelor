@@ -21,7 +21,7 @@ return new class extends Migration
             $table->char('maps', 255)->nullable();
             $table->time('timeOpen')->nullable();
             $table->time('timeClose')->nullable();
-            $table->char('mapsView', 255)->nullable();
+            $table->text('mapsView')->nullable();
             $table->timestamps();
         });
     }

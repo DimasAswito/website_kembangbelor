@@ -29,18 +29,18 @@ class WisataResource extends Resource
             ->schema([
                 TextInput::make('name')->required(),
                 Textarea::make('desc')->required(),
-                TextInput::make('htm')->numeric(),
+                TextInput::make('htm')->numeric()->required(),
                 FileUpload::make('imageWisata')
                 ->label('Foto Wisata')
                 ->image()
                 ->disk('public')
                 ->directory('wisata')
                 ->required(),
-                TextInput::make('whatsapp'),
-                TextInput::make('maps'),
-                TextInput::make('mapsView'),
-                TimePicker::make('timeOpen'),
-                TimePicker::make('timeClose'),
+                TextInput::make('whatsapp')->required(),
+                TextInput::make('maps')->required(),
+                TextInput::make('mapsView')->required(),
+                TimePicker::make('timeOpen')->required(),
+                TimePicker::make('timeClose')->required(),
             ]);
     }
 

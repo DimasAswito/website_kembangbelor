@@ -19,9 +19,9 @@ class Wisata extends Model
         'imageWisata',
         'whatsapp',
         'maps',
+        'mapsView',
         'timeOpen',
         'timeClose',
-        'mapsView',
     ];
 
     public function getImageUrlAttribute()

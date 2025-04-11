@@ -34,7 +34,7 @@ class GaleriResource extends Resource
                 ->disk('public')
                 ->directory('galeri')
                 ->required(),
-                TextInput::make('caption')->nullable(),
+                TextInput::make('caption')->nullable()->required(),
                 TextInput::make('name_uploader')->required(),
             ]);
     }
