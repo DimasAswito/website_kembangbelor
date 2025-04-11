@@ -18,11 +18,12 @@
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">Semua</li>
               @php
-                  $uniqueParentTourisms = $galeri->unique('parentTourism');
+                  $uniqueParentTourisms = $galeri->unique('wisataName');
               @endphp
               @foreach ($uniqueParentTourisms as $row)
-                  <li data-filter=".filter-{{ $row->parentTourism }}">{{ $row->wisata->name }}</li>
+                  <li data-filter=".filter-{{ $row->wisataName }}">{{ $row->wisata->name }}</li>
               @endforeach
+
           </ul>
           
           </div>
@@ -41,7 +42,6 @@
                   </div>
               </div>
           @endforeach
-
       </div>
       
 
